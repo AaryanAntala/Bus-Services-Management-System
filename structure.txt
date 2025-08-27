@@ -1,0 +1,16 @@
+1. order meal (show the available meals), (ask bus_id, passenger_id, seat_id, meal_id, quantity)
+2. order linen (show linen availability), (ask bus_id, passenger_id, seat_id)
+3. upgrade seat (we already know the user's bus_id, and seat_id, so show the seats for that bus_id if no seats available throw error that no seats available)
+    else ask-> seat_id hw wishes to change to, update all the tables first update the booking table with the user's  new seat_id and then update all by cascade feature
+
+
+For conductor:
+4. serve_orders (show the orders table based on the conductor's bus_id with only those whose status is pending) otherwise print that no current orders
+
+
+tables:
+1. booking: pk(booking_id) fk referenes seats (bus_id,seat_id) on update cascade
+2. Meals: pk(meal_id)
+3. Linens: pk(bus_id)
+4. Seats: pk(bus_id, seat_id)
+5. Orders: pk(bus_id, passenger_id, seat_id, meal_id ),,, fk(bus_id, passenger_id, seat_id) on update cascade
